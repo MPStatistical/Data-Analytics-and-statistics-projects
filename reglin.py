@@ -33,7 +33,8 @@ if len(x_values) > 1 and len(y_values) > 1 and len(x_values) == len(y_values):
     # Visualizar la línea de regresión y los datos
     fig, ax = plt.subplots()
     ax.scatter(data['x'], data['y'], label='Datos')
-    ax.plot(data['x'], reg.predict(data[['x']]), color='red', label='Regresión Lineal')
+    ax.plot(data['x'].values, reg.predict(data[['x']].values), color='red', label='Regresión Lineal')
+
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_title('Regresión Lineal')
