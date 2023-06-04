@@ -38,7 +38,7 @@ if len(x_values) > 1 and len(y_values) > 1 and len(x_values) == len(y_values):
 
     # Visualizar la línea de regresión y los datos
     axs[0].scatter(data['x'], data['y'], label='Datos', color='skyblue', edgecolor='gray', alpha=0.8)
-    axs[0].plot(data['x'], results.fittedvalues, color='red', label='Regresión Lineal')
+    axs[0].plot(np.array(data['x']), results.fittedvalues, color='red', label='Regresión Lineal')
     axs[0].set_xlabel('x')
     axs[0].set_ylabel('y')
     axs[0].set_title('Regresión Lineal')
