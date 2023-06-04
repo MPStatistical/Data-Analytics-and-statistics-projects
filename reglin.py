@@ -18,8 +18,8 @@ st.title("Regresión Lineal")
 st.subheader("Ingrese los datos")
 
 # Obtener los datos del usuario
-x_values = st.text_input("Ingrese los valores de x separados por coma: (Ej:0.0, 0.20, 0.41, 0.61)")
-y_values = st.text_input("Ingrese los valores de y separados por coma: (Ej:-0.61, 0.40, 1.16, 1.81) ")
+x_values = st.text_input("Ingrese los valores de x separados por coma: (Ej: 0.0, 0.20, 0.41, 0.61)")
+y_values = st.text_input("Ingrese los valores de y separados por coma: (Ej: -0.61, 0.40, 1.16, 1.81) ")
 
 # Convertir los datos a listas numéricas
 x_values = [float(x) for x in x_values.split(",") if x.strip()]
