@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
@@ -42,13 +43,14 @@ if len(x_values) > 1 and len(y_values) > 1 and len(x_values) == len(y_values):
 
     # Visualizar la línea de regresión, los datos y los intervalos de predicción
     axs[0].scatter(data['x'], data['y'], label='Datos', color='skyblue', edgecolor='gray', alpha=0.8)
-    axs[0].plot(data['x'].to_numpy(), results.fittedvalues.to_numpy(), color='red', label='Regresión Lineal')
-    axs[0].plot(data['x'].to_numpy(), lower_pred, color='gray', linestyle='--')
-    axs[0].plot(data['x'].to_numpy(), upper_pred, color='gray', linestyle='--')
+    axs[0].plot(np.array(data['x']), np.array(results.fittedvalues), color='red', label='Regresión Lineal')
+    axs[0].plot(np.array(data['x']), np.array(lower_pred), color='gray', linestyle='--')
+    axs[0].plot(np.array(data['x']), np.array(upper_pred), color='gray', linestyle='--')
     axs[0].set_xlabel('x')
     axs[0].set_ylabel('y')
     axs[0].set_title('Regresión Lineal')
     axs[0].legend(loc='upper left')
+
     # Visualizar los residuos con un QQ-Plot
     sm.qqplot(results.resid, line='s', ax=axs[1], color='gray')
     axs[1].set_title('QQ-Plot')
