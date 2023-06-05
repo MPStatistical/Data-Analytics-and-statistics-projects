@@ -1,3 +1,3 @@
 # proyectos
 Hola! gracias por visitar mi repositorio de proyectos
-Acá hay diferentes scripts de simulaciones, análsis de datos y visualizaciones.
+Acá hay diferentes scripts de simulaciones, análisis de datos y visualizaciones.
